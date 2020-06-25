@@ -1,7 +1,7 @@
 {
     "local.localhost" : {
-        "project"  : null,
-        "queue"    : null,
+        "project"  : "",
+        "queue"    : "",
         "schema"   : null,
         "cores"    : 6,
         "gpus"     : 0
