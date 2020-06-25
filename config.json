@@ -1,0 +1,18 @@
+{
+    "local.localhost" : {
+        "project"  : null,
+        "queue"    : null,
+        "schema"   : null,
+        "cores"    : 6,
+        "gpus"     : 0
+    },
+
+    "ornl.summit"  : {
+        "project"  : "csc299",
+        "queue"    : "batch",
+        "schema"   : "local",
+        "cores"    : 30,
+	"gpus"     : 0
+    }
+}
+

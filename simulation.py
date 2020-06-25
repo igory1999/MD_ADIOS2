@@ -46,6 +46,7 @@ if(__name__ == '__main__'):
     except:
         print("Usage: python simulation.py dir adios_xml")
         sys.exit(1)
+ 
     subprocess.getstatusoutput(f'mkdir -p {dir}')
     subprocess.getstatusoutput(f'cp {adios_xml} {dir}/adios.xml')
     logging.basicConfig(filename=f'{dir}/simulation.log', filemode='w', level=logging.INFO)        

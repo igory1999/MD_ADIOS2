@@ -21,7 +21,6 @@ if(__name__ == '__main__'):
     dir_simulations = f'{run_dir}/simulations'
     ADIOS_XML = f'{current_dir}/adios.xml'
 
-    
     logging.basicConfig(filename=f'{dir_aggregator}/aggregator.log', filemode='w', level=logging.INFO)
     logging.info("Start")
     logging.info(get_now())
