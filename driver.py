@@ -35,7 +35,7 @@ def generate_simulation_pipeline(i):
             s = Stage()
             s.name = f"{nstages}"
             t = Task()
-            t.cpu_reqs = {'processes':1, 'process_type': None, 'threads_per_process':1, 'thread_type': None}
+            t.cpu_reqs = {'processes':1, 'process_type': None, 'threads_per_process':4, 'thread_type': 'OpenMP'}
             t.gpu_reqs = {'processes': 0, 'process_type': None, 'threads_per_process': 0, 'thread_type': None}
             t.name = f" {i}_{nstages} "
             t.executable = PYTHON
@@ -50,6 +50,8 @@ def generate_simulation_pipeline(i):
     s = Stage()
     s.name = f"{nstages}"
     t = Task()
+    t.cpu_reqs = {'processes':1, 'process_type': None, 'threads_per_process':4, 'thread_type': 'OpenMP'}
+    t.gpu_reqs = {'processes': 0, 'process_type': None, 'threads_per_process': 0, 'thread_type': None}
     t.name = f" {i}_{nstages} "
     t.executable = PYTHON
     t.arguments = [f'{current_dir}/simulation.py', f'{run_dir}/simulations/all/{i}_{nstages}', ADIOS_XML]
@@ -82,7 +84,7 @@ if(__name__ == "__main__"):
     s = Stage()
     s.name = "AggregationS"
     t = Task()
-    t.cpu_reqs = {'processes':1, 'process_type': None, 'threads_per_process':1, 'thread_type': None}
+    t.cpu_reqs = {'processes':1, 'process_type': None, 'threads_per_process':4, 'thread_type': 'OpenMP'}
     t.gpu_reqs = {'processes': 0, 'process_type': None, 'threads_per_process': 0, 'thread_type': None}
     t.name = "aggregator"
     t.executable = PYTHON
